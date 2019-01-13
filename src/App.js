@@ -7,7 +7,8 @@ import CharacterContainer from "./Containers/CharacterContainer";
 class App extends Component {
   state = {
     characterList: [],
-    searchCharacterTerm: ""
+    searchCharacterTerm: "",
+    editHouse: false
   };
 
   componentDidMount() {
@@ -23,11 +24,20 @@ class App extends Component {
     return characterList;
   };
 
+  toggleHouse = e => {
+    this.setState({
+      editHouse: !this.state.editHouse
+    });
+    console.log(this.state.editHouse);
+  };
+
   render() {
     return (
       <div className="app">
-        <h1>HI</h1>
-        <CharacterContainer characterList={this.state.characterList} />
+        <CharacterContainer
+          toggleHouse={this.toggleHouse}
+          characterList={this.state.characterList}
+        />
       </div>
     );
   }

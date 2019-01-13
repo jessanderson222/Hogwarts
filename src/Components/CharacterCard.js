@@ -2,7 +2,15 @@ import React from "react";
 
 class CharacterCard extends React.Component {
   render() {
-    return <h1>Character Card</h1>;
+    return (
+      <div>
+        <img alt="" height="200" src={this.props.character.image1} />
+        <h3>{this.props.character.name}</h3>
+        <h3 onClick={this.props.toggleHouse}>{this.props.character.house}</h3>
+        <br />
+        <br />
+      </div>
+    );
   }
 }
 
