@@ -7,6 +7,7 @@ class CharacterCard extends React.Component {
         <img alt="" height="200" src={this.props.character.image1} />
         <h3>{this.props.character.name}</h3>
         <h3 onClick={this.props.toggleHouse}>{this.props.character.house}</h3>
+        <div>{this.props.onRenderForm()}</div>
         <br />
         <br />
       </div>

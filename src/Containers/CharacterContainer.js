@@ -3,19 +3,18 @@ import CharacterCard from "../Components/CharacterCard";
 
 export default class CharacterContainer extends React.Component {
   render() {
-    console.log(this.props);
+    let list = this.props.characterList.map((character, i) => (
+      <CharacterCard
+        onRenderForm={this.props.onRenderForm}
+        toggleHouse={this.props.toggleHouse}
+        key={i}
+        character={character}
+      />
+    ));
     return (
       <div>
         <h3>Characters</h3>
-        <div>
-          {this.props.characterList.map((character, i) => (
-            <CharacterCard
-              toggleHouse={this.props.toggleHouse}
-              key={i}
-              character={character}
-            />
-          ))}
-        </div>
+        <div>{list}</div>
       </div>
     );
   }
