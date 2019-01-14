@@ -16,11 +16,24 @@ class NewCharacterForm extends Component {
     });
   };
 
+  submitHandler = e => {
+    e.preventDefault();
+    this.props.characterSubmitHandler(e, this.state);
+    this.setState({
+      name: "",
+      age: "",
+      house: "",
+      role: "",
+      image1: "",
+      image2: ""
+    });
+  };
+
   render() {
     return (
       <div>
         <h4>New Character</h4>
-        <form onSubmit={e => this.props.characterSubmitHandler(e, this.state)}>
+        <form onSubmit={this.submitHandler}>
           <input
             type="text"
             name="name"
