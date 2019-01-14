@@ -1,35 +1,34 @@
 import React, { Component } from "react";
 import "./App.css";
 import CharacterContainer from "./Containers/CharacterContainer";
-import UpdateForm from "./Components/UpdateForm";
+// import UpdateForm from "./Components/UpdateForm";
 import SearchForm from "./Components/SearchForm";
 import NewCharacterForm from "./Components/NewCharacterForm";
-// import HouseContainer from "./Containers/HouseContainer";
+import HouseContainer from "./Containers/HouseContainer";
 
 class App extends Component {
   state = {
     characterList: [],
     searchCharacterTerm: "",
-    editHouse: false,
-    filteredArr: []
+    filteredArr: [],
+    houseList: []
   };
 
   componentDidMount() {
-    const path = "http://localhost:3001/characters";
-    fetch(path)
+    const characterPath = "http://localhost:3001/characters";
+    const housePath = "http://localhost:3001/houses";
+    fetch(characterPath)
       .then(resp => resp.json())
-      .then(json => this.setState({ characterList: json }));
+      .then(json => this.setState({ characterList: json, filteredArr: json }));
+
+    fetch(housePath)
+      .then(resp => resp.json())
+      .then(json => this.setState({ houseList: json }));
   }
 
   mutateState = () => {
     let characterList = [...this.state.characterList];
     return characterList;
-  };
-
-  toggleHouse = e => {
-    this.setState({
-      editHouse: !this.state.editHouse
-    });
   };
 
   changeHandler = e => {
@@ -42,10 +41,6 @@ class App extends Component {
       searchCharacterTerm: e.target.value,
       filteredArr: newArr
     });
-  };
-
-  handleRenderForm = () => {
-    if (this.state.editHouse === true) return <UpdateForm />;
   };
 
   characterSubmitHandler = (e, character) => {
@@ -71,7 +66,10 @@ class App extends Component {
           mutateState={this.mutateState}
           toggleHouse={this.toggleHouse}
           characterList={this.state.filteredArr}
-          onRenderForm={this.handleRenderForm}
+        />
+        <HouseContainer
+          houseList={this.state.houseList}
+          characterList={this.state.filteredArr}
         />
       </div>
     );
