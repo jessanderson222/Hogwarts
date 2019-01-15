@@ -30,6 +30,15 @@ class App extends Component {
     updatedCharList.forEach(character => {
       if (character.id === who) {
         character.house = newHouseName;
+
+        fetch(`http://localhost:3001/characters/${character.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({ house: newHouseName })
+        });
       }
     });
     //update state
@@ -44,6 +53,14 @@ class App extends Component {
     let arr = [...this.state.characters, character];
     this.setState({
       characters: arr
+    });
+    fetch("http://localhost:3001/characters", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(character)
     });
   };
 

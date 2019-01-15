@@ -53,7 +53,30 @@
       "role": "professor",
       "image1": "https://fsmedia.imgix.net/21/fd/33/16/2844/4ec3/bae9/57d38001e216/sonserina.jpeg?rect=0%2C0%2C1920%2C959&dpr=2&auto=format%2Ccompress&w=650",
       "image2": "https://imgix.bustle.com/rehost/2016/9/13/4685a819-e442-4e36-af5b-9c8c42bfbf00.jpg?w=970&h=582&fit=crop&crop=faces&auto=format&q=70"
+    },
+    {
+      "name": "Luna Lovegood",
+      "age": "14",
+      "role": "student",
+      "house": "Ravenclaw",
+      "image1": "https://images.pottermore.com/bxd3o8b291gf/t6GVMDanqSKGOKaCWi8oi/2a4c50ed04600e4e4c0c5012628f4ace/LunaLovegood_WB_F5_LunaLovegoodPromoCloseUp_Promo_080615_Port.jpg?w=1024",
+      "image2": "https://images.pottermore.com/bxd3o8b291gf/Mam68Vfou2OO6kqEcyW8W/a9abc28e1e15bdd7d57f6257f3fed897/LunaLovegood_WB_F6_LunaLovegoodInQuibblerSpecsOnHogwartsExpress_Still_080615_Port.jpg?w=1200",
+      "id": 7
+    },
+    {
+      "name": "Moaning Myrtle",
+      "age": "250",
+      "role": "ghost",
+      "house": "Hufflepuff",
+      "image1": "https://vignette.wikia.nocookie.net/harrypotter/images/0/03/Myrtle1.PNG/revision/latest?cb=20170113020338",
+      "image2": "https://s.aolcdn.com/dims-shared/dims3/GLOB/crop/644x423+42+0/resize/1028x675!/format/jpg/quality/85/https://s.aolcdn.com/hss/storage/midas/17d659a890a099b9c0a7cbfe564b873e/204086327/Screen+Shot+2016-07-15+at+1.33.02+PM.png",
+      "id": 8
     }
   ],
-  "houses": ["Gryffindor", "Slytherin", "HufflePuff", "Ravenclaw"]
+  "houses": [
+    "Gryffindor",
+    "Slytherin",
+    "HufflePuff",
+    "Ravenclaw"
+  ]
 }
